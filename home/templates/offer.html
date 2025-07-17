@@ -1,0 +1,412 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
+{% endblock %}
+{% block content %}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  
+.process-box{
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 2px 2px 7px 0 #00000057;
+}
+.process-left:after{
+    content: "";
+    border-top: 15px solid #ffffff;
+    border-bottom: 15px solid #ffffff;
+    border-left: 15px solid #ffffff;
+    border-right: 15px solid #ffffff;
+    display: inline-grid;
+    position: absolute;
+    right: -15px;
+    top: 42%;
+    transform: rotate(45deg);
+    box-shadow: 3px -2px 3px 0px #00000036;
+    z-index: 1;
+}
+.process-right:after{
+    content: "";
+    border-top: 15px solid #ffffff00;
+    border-bottom: 15px solid #ffffff;
+    border-left: 15px solid #ffffff;
+    border-right: 15px solid #ffffff00;
+    display: inline-grid;
+    position: absolute;
+    left: -15px;
+    top: 42%;
+    transform: rotate(45deg);
+    box-shadow: -1px 1px 3px 0px #0000001a;
+    z-index: 1;
+}
+.process-step{
+    background: #00BCD4;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    color: #fff;
+    height: 100%;
+    padding-top: 8px;
+    position: relative;
+    top: -26px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: -6px 8px 0px 0px #00000014;
+}
+.process-point-right{
+    background: #fb8500;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 8px solid #00bcd4;
+    box-shadow: 0 0 0px 4px #5c5c5c;
+    margin: auto 0;
+    position: absolute;
+    bottom: 40px;
+    left: -63px;
+}
+.process-point-right:before{
+    content: "";
+    height: 144px;
+    width: 11px;
+    background: #5c5c5c;
+    display: inline-grid;
+    transform: rotate(36deg);
+    position: relative;
+    left: -50px;
+    top: -0px;
+}
+.process-point-left{
+    background: #fb8500;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 8px solid #00bcd4;
+    box-shadow: 0 0 0px 4px #5c5c5c;
+    margin: auto 0;
+    position: absolute;
+    bottom: 40px;
+    right: -63px;
+}
+.process-point-left:before {
+    content: "";
+    height: 144px;
+    width: 11px;
+    background: #5c5c5c;
+    display: inline-grid;
+    transform: rotate(-38deg);
+    position: relative;
+    left: 50px;
+    top: 0px;
+
+}
+
+.process-last:before{
+    display: none;
+}
+.process-box p{
+    z-index: 9;
+}
+.process-step p{
+    font-size: 20px;
+}
+.process-step h2{
+    font-size: 39px;
+}
+.process-step:after{
+    content: "";
+    border-top: 8px solid #04889800;
+    border-bottom: 8px solid #048898;
+    border-left: 8px solid #04889800;
+    border-right: 8px solid #048898;
+    display: inline-grid;
+    position: absolute;
+    left: -16px;
+    top: 0;
+}
+.process-step:before{
+    content: "";
+    border-top: 8px solid #ff000000;
+    border-bottom: 8px solid #048898;
+    border-left: 8px solid #048898;
+    border-right: 8px solid #ff000000;
+    display: inline-grid;
+    position: absolute;
+    right: -16px;
+    top: 0;
+}
+.process-line-l{
+    background: #003566;
+    height: 4px;
+    position: absolute;
+    width: 136px;
+    right: -153px;
+    top: 64px;
+    z-index: 9;
+}
+.process-line-r{
+    background: #003566;
+    height: 4px;
+    position: absolute;
+    width: 136px;
+    left: -153px;
+    top: 63px;
+    z-index: 9;
+}
+  .offer-section {
+    background-image: url("{% static 'assets/img/market2.jpg' %}");
+    background-size: cover; /* Or 'contain' based on your visual goal */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: bottom center;
+   width: 100%;
+    min-height: 375px;
+    margin-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .text-section {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 50px;
+  }
+  /* Tabs*/
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#tabs{
+	
+    color: #232323;
+}
+#tabs h6.section-title{
+    color: #232323;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 4px solid !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+#tabs .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #232323;
+    font-size: 20px;
+}
+
+</style>
+  <!-- Start content -->
+   <section class="section offer-section" >
+        <div class="bg-overlay"></div>
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-4">
+                        <h3 class="text-section"> <span class="fw-bolder">What We Do </span></h3>
+                      
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+<section id="tabs">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 ">
+				<nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Plastic Recycling</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">3D Printing</a>
+					</div>
+				</nav>
+				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<!-- PLASTIC TYPES -->
+<div class="container p-2 mt-4">
+  <h4 class="mb-4 text-center display-6">Types of Common Plastic We Collect</h4>
+
+  <div class="row g-4">
+    <!-- PET -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="{% static 'assets/img/pet.jpg' %}" alt="PET" class="rounded-circle" width="60" height="60">
+          <div class="ms-3">
+            <h6 class="mb-0">Price Per Kg</h6>
+            <span class="text-primary fw-bold">KSH 20</span>
+          </div>
+        </div>
+        <div class="mt-3 text-center">
+          <h5 class="heading">Polyethylene Terephthalate (PET)</h5>
+          <p class="text2">Collected from water & soda bottles<br/></p>
+        </div>
+      </div>
+    </div>
+    <!-- HDPE -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="{% static 'assets/img/hdpe.jpg' %}" alt="HDPE" class="rounded-circle" width="60" height="60">
+          <div class="ms-3">
+            <h6 class="mb-0">Price Per Kg</h6>
+            <span class="text-primary fw-bold">KSH 20</span>
+          </div>
+        </div>
+        <div class="mt-3 text-center">
+          <h5 class="heading">High Density Polyethylene (HDPE)</h5>
+          <p class="text2">Food & beverage containers, cleaning bottles, pipes, cutting boards</p>
+        </div>
+      </div>
+    </div>
+    <!-- PP -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="{% static 'assets/img/pp.webp' %}" alt="PP" class="rounded-circle" width="60" height="60">
+          <div class="ms-3">
+            <h6 class="mb-0">Price Per Kg</h6>
+            <span class="text-primary fw-bold">KSH 10</span>
+          </div>
+        </div>
+        <div class="mt-3 text-center">
+          <h5 class="heading">Polypropylene (PP)</h5>
+          <p class="text2">Used in pallets, yogurt containers, hot beverage cups, food packaging</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RECYCLING PROCESS -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h3 class="text-center knoAwz mb-5">Our Recycling Process</h3>
+
+    <!-- Step 1 -->
+    <div class="row mb-4 align-items-center" data-aos="fade-right">
+      <div class="col-md-6">
+        <div class="process-box">
+          <div class="process-step"><h2>01</h2></div>
+          <h5 class=" text-center">SOURCING</h5>
+          <p><small>Malindi is ideal for collecting marine refuse due to its location. We buy plastic caught in fishing nets from out-of-work fishermen — helping both the environment and local economy.</small></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="row mb-4 justify-content-end" data-aos="fade-left">
+      <div class="col-md-6">
+        <div class="process-box">
+          <div class="process-step"><h2>02</h2></div>
+          <h5 class=" text-center">PRODUCTION</h5>
+          <p><small>Sargasso Reclamation produces ocean plastic flakes by washing, shredding, and bailing plastic from local fishermen. This supports sustainable recycling and job creation.</small></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="row mb-4 align-items-center" data-aos="fade-right">
+      <div class="col-md-6">
+        <div class="process-box">
+          <div class="process-step"><h2>03</h2></div>
+          <h5 class=" text-center">GOING TO THE MARKET</h5>
+          <p><small>We sell ocean-bound plastic flakes and plastic credits. We work with fishing communities, collecting plastic from the beach and deeper waters, and exporting to global markets.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+					</div>
+					<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="hero">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto image-box">
+        <img src="{% static 'assets/img/beadssteps.jpg' %}" alt="Inclusive Employment Opportunities" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="h3 fw-bold text-center m-4">3D Printing Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <h5 class="fs-42 text-primary fw-bolder">Custom Prototyping</h5>
+          <p>Quick, accurate prototypes to validate your product’s form and function before full-scale production.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <h5 class="fs-42 text-primary fw-bolder">Functional Parts</h5>
+          <p>Ready-to-use custom parts for repairs, replacements, or low-volume production runs.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <h5 class="fs-42 text-primary fw-bolder">Product Design</h5>
+          <p>From concept to CAD – we help you design and model your idea for 3D printing.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <h5 class="fs-42 text-primary fw-bolder">Small Batch Production</h5>
+          <p>Perfect for custom items or limited runs without costly tooling or molds.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <h5 class="fs-42 text-primary fw-bolder">Educational & Custom Projects</h5>
+          <p>Models for learning, art, and exploration – tailored for schools, creators, and makers.</p>
+        </div>
+      </div>
+    </div>
+    <h2 class="h3 fw-bold text-center m-4">How it work's</h2>
+    <ul class="list-group  mb-5">
+      <li class="list-group-item">Send us your 3D file (STL, OBJ, STEP)</li>
+      <li class="list-group-item">Choose your material and finish</li>
+      <li class="list-group-item">Receive a quote</li>
+      <li class="list-group-item">Production begins</li>
+      <li class="list-group-item">Delivery or Pickup</li>
+    </ul>
+   
+
+    <div class="text-center mb-5">
+      <h4 class="fw-bold">Let’s Print Something Amazing Together</h4>
+      <p><i class="fas fa-envelope mr-3 text-info"></i> Email: <a href="mailto:samwel@sargasso-reclamtion.com">samwel@sargasso-reclamtion.com</a> | <i class="fas fa-phone mr-3 text-info"></i>  Call: +254 706415222</p>
+    </div>
+  </div>
+				</div>
+					
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+ {% endblock %}

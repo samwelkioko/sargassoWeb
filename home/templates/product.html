@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
+{% endblock %}
+{% block content %}
+
+     <style>
+     .product-section {
+    background-image: url("{% static 'assets/img/market.webp' %}");
+    background-size: cover; /* Or 'contain' based on your visual goal */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: bottom center;
+    width: 100%;
+    min-height: 375px;
+    margin-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: 1; /* Ensure it sits above the background image */
+  }
+  .text-section {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 100px;
+  }
+</style>
+    <!-- Start section -->
+    <section class="section product-section ">
+        <div class="bg-overlay"></div>
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <h3 class="text-section"> <span class="fw-bolder">Product Portfolio</span></h3>
+                        <div class="main-title-border bg-primary  mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- End section -->
+
+<!-- Start news and events -->
+ 
+ <div class="cointaner">
+  <div class="row">
+
+                <div class="col-lg-8 mx-auto">
+                    <div class="text-center">
+                        <h3 class="mt-4 pt-4 text-capitalize"> <span class="fw-bolder">Our Products</span></h3>
+                        <div class="main-title-border bg-primary  mx-auto "></div>
+                  <div class="btn-container ">
+        <!-- <button type="button" class="filter-btn" data-id="all">all</button>
+        <button type="button" class="filter-btn" data-id="breakfast">
+          breakfast
+        </button>
+        <button type="button" class="filter-btn" data-id="lunch">lunch</button>
+        <button type="button" class="filter-btn" data-id="shakes">
+          shakes
+        </button> -->
+                </div></div>
+            </div>
+      </div>
+        <div class="row  justify-content-start">
+            
+            <div class="col-lg-11 col-md-offset-1 mx-auto">
+               <div class=" section-center mb-4 pb-4"></div>
+            </div>
+         </div>
+
+    </div>
+
+    <!-- End news and events  -->
+
+
+
+    <!-- Start Footer -->
+
+<script>
+
+const menu = JSON.parse("{{ menu_json|escapejs }}");
+// get parent element
+const sectionCenter = document.querySelector(".section-center");
+const btnContainer = document.querySelector(".btn-container");
+// display all items when page loads
+window.addEventListener("DOMContentLoaded", function () {
+  diplayMenuItems(menu);
+  displayMenuButtons();
+});
+
+function diplayMenuItems(menuItems) {
+  let displayMenu = menuItems.map(function (item) {
+    // console.log(item);
+      const staticPath = "{% static '' %}"; // Adjust the static path as needed
+      
+       return `<div class="col-sm-6 col-md-4 col-lg-3 m-2">
+                <div class="card">
+                    <img class="card-img-top" src="${item.img}" alt="${item.title}">
+                   
+                    <div class="card-footer">
+                        <span class="float-right fw-bold">${item.title}</span>
+                         <span><i class="float-right mx-4"></i> ${item.desc}</span>
+                      
+                    </div>
+                </div>
+            </div>
+
+                `;
+   
+  });
+  displayMenu = displayMenu.join("");
+  // console.log(displayMenu);
+
+  sectionCenter.innerHTML = displayMenu;
+}
+function displayMenuButtons() {
+  const categories = menu.reduce(
+    function (values, item) {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ["all"]
+  );
+  const categoryBtns = categories
+    .map(function (category) {
+      return `<button type="button" class=" btn btn-outline-primary filter-btn" data-id=${category}>
+          ${category}
+        </button>`;
+    })
+    .join("");
+
+  btnContainer.innerHTML = categoryBtns;
+  const filterBtns = btnContainer.querySelectorAll(".filter-btn");
+  console.log(filterBtns);
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      // console.log(e.currentTarget.dataset);
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(function (menuItem) {
+        // console.log(menuItem.category);
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      });
+      if (category === "all") {
+        diplayMenuItems(menu);
+      } else {
+        diplayMenuItems(menuCategory);
+      }
+    });
+  });
+}
+//Activemenu
+let navItems = document.querySelectorAll(".nav-item");
+
+navItems.forEach(navItem => {
+  navItem.addEventListener("click", () => {
+    document.querySelector(".active")?.classList.remove("active");
+    navItem.classList.add("active");
+    
+    })
+  
+  });
+
+
+</script>
+{% endblock %}

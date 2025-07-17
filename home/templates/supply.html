@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
+{% endblock %}
+{% block content %}
+  
+  <style>
+    .hero {
+      background: url('https://via.placeholder.com/1600x400?text=Supply+to+Us') no-repeat center center;
+      background-size: cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 1px 1px 5px #000;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Supply to Us</h1>
+  </section>
+
+  <!-- Introduction -->
+  <div class="container py-5">
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <h2>Become a Waste Supplier</h2>
+        <p>
+          Join us in creating a circular economy. We welcome waste collectors,
+          businesses, and organizations looking to responsibly recycle plastic waste.
+        </p>
+      </div>
+    </div>
+
+    <!-- Supply Form -->
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <h4>Register as a Supplier</h4>
+        <form id="supplyForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name *</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number *</label>
+            <input type="tel" class="form-control" id="phone" required />
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Location *</label>
+            <input type="text" class="form-control" id="location" required />
+          </div>
+          <div class="mb-3">
+            <label for="wasteType" class="form-label">Type of Plastic Waste *</label>
+            <select class="form-select" id="wasteType" required>
+              <option value="">Choose...</option>
+              <option value="PET">PET (e.g. bottles)</option>
+              <option value="HDPE">HDPE</option>
+              <option value="LDPE">LDPE</option>
+              <option value="Mixed">Mixed Plastics</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <div id="formAlert" class="alert alert-success mt-3 d-none">
+          Thank you! We’ll contact you shortly.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="row">
+      <div class="col-md-10">
+        <h4>Frequently Asked Questions</h4>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1Heading">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                What types of plastic do you accept?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We accept PET, HDPE, LDPE, and some mixed plastic waste.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2Heading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                How do I get paid for my plastic waste?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Payments are made based on quantity and quality, via mobile money or bank.
+              </div>
+            </div>
+          </div>
+          <!-- Add more FAQs as needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Handle form submission
+    document.getElementById("supplyForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("formAlert").classList.remove("d-none");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+ {% endblock %}

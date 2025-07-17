@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
+{% endblock %}
+{% block content %}
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; }
+    .navbar-brand { font-weight: bold; color: #28a745 !important; }
+    .hero { background: #218838; color: white; padding: 60px 0; text-align: center; }
+    .hero h1 { margin-bottom: 0.5rem; }
+    .service-section { padding: 60px 0; }
+    .service-col img { width: 80px; margin-bottom: 20px; }
+    .service-col h5 { font-weight: 600; color: #218838; }
+    .contact-info, .dropoff-locations { margin-top: 40px; }
+    .form-control:focus { border-color: #28a745; box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25); }
+    .btn-success { background-color: #28a745; border: none; }
+    .btn-success:hover { background-color: #218838; }
+    footer { background: #212529; color: white; padding: 20px 0; }
+    footer a { color: #8fd19e; text-decoration: underline; }
+  </style>
+
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>We Want Your Plastic Waste!</h1>
+      <p>Join our network of post-consumer and post-production waste suppliers.</p>
+    </div>
+  </section>
+
+  <!-- What We Accept -->
+  <section class="service-section container">
+    <div class="text-center mb-5">
+      <h2>Accepted Materials</h2>
+      <p>We collaborate with collectors of post-consumer and post-production plastic waste.</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-3 service-col">
+        <img src="pet-icon.png" alt="PET">
+        <h5>PET</h5>
+        <p>Water & soda bottles</p>
+      </div>
+      <div class="col-md-3 service-col">
+        <img src="hdpe-icon.png" alt="HDPE">
+        <h5>HDPE</h5>
+        <p>Oil, shampoo, detergent containers</p>
+      </div>
+      <div class="col-md-3 service-col">
+        <img src="pp-icon.png" alt="PP">
+        <h5>PP</h5>
+        <p>Bottle tops, tubs, cups</p>
+      </div>
+      <div class="col-md-3 service-col">
+        <img src="cartons-icon.png" alt="Cartons">
+        <h5>Cartons</h5>
+        <p>Packaging cartons & more</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drop-Off Locations -->
+  <section class="dropoff-locations container">
+    <div class="text-center mb-4">
+      <h2>Find Drop‑off Locations</h2>
+      <a href="#map" class="btn btn-success">Go to Maps</a>
+    </div>
+    <!-- Embed your map or placeholder div here -->
+    <div id="map" class="mb-5" style="height: 300px; background: #eee;"></div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-info container mb-5">
+    <div class="text-center mb-4">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <p><strong>Mr Green Africa Kenya Ltd.</strong><br>
+          Old Yana Tyres Complex, Mombasa Rd & Enterprise Rd Junction, Nairobi, Kenya<br>
+          📞 +254 757 204 782 | ✉️ contact@mrgreentrading.com<br>
+          Mon–Fri, 8 am–5 pm</p>
+
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Name *</label>
+            <input type="text" class="form-control" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email *</label>
+            <input type="email" class="form-control" placeholder="you@example.com">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+ {% endblock %}

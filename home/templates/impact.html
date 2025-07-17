@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
+{% endblock %}
+{% block content %}
+   <style>
+     .impact-section {
+    background-image: url("{% static 'assets/img/market2.jpg' %}");
+    background-size: cover; /* Or 'contain' based on your visual goal */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: bottom center;
+    width: 100%;
+    min-height: 375px;
+    margin-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: 1; /* Ensure it sits above the background image */
+  }
+  .text-section {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 100px;
+  }
+    .image-box {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 350px;
+      margin-bottom: 20px;
+    }
+
+</style>
+  <!-- Start content -->
+   <section class="section impact-section" >
+        <div class="bg-overlay"></div>
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-4">
+                        <h3 class="text-section"> <span class="fw-bolder">Our Impact</span></h3>
+                        <div class="main-title-border bg-primary  mx-auto"></div>
+                      
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+  <div class="container py-5" >
+    <div class="text-center mb-4">
+      <p class="lead fs-22 fw-bold" > At Sargasso Reclamation, our mission goes beyond recycling plastic—we’re building a cleaner, more inclusive, and economically vibrant future. Through every kilogram of plastic we reclaim, we contribute to meaningful transformation across environmental health, community empowerment, and economic development.</p>
+    </div>
+
+    </div>
+    
+<section>
+  <div class="container mt-4">
+  
+<h3 class="fs-36 fw-bolder text-center"><span><i class="fa fa-cloud-sun text-primary"></i> </span>Environmental Impact</h3>
+<dl class="dl-horizontal">
+  <div class="mx-4 px-4 mb-2">
+  <dt class="fs-22 text-primary">Pollution Reduction</dt>
+  <dd class="fs-18">Our operations help reduce the volume of plastic waste that ends up in landfills, rivers, and oceans. By reclaiming and processing plastics, Sargasso Reclamation minimizes environmental degradation and helps restore natural ecosystems.
+</dd>
+  <dt class="fs-22 text-primary">Cleaner Cities & Public Spaces</dt>
+  <dd class="fs-18">We partner with municipalities and private partners to help manage plastic waste effectively, ensuring cleaner neighborhoods and public spaces. This supports better sanitation and enhances urban aesthetics.
+</dd>
+    <div class="text-center mb-4">
+      <p class="lead" >Summary of Plastic Collections (KGs)</p>
+    </div>
+
+    <div class="col-md-3">
+  <label class="form-label">Year</label>
+  <select class="form-select" id="yearFilter">
+    <option value="2025">Select Year</option>
+    {% for year in years %}
+      <option value="{{ year.year }}">{{ year.year }}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<!-- Chart -->
+<div class="card mt-4">
+  <div class="card-body">
+    <canvas id="plasticChart" height="100"></canvas>
+  </div>
+</div>
+</div>
+</dl>
+<h3 class="fs-36 fw-bolder text-center m-4 p-4"><span><i class="fa fa-briefcase text-primary "></i> </span>Community Empowerment</h3>
+<dl class="dl-horizontal">
+  <div class="mt-4">
+  <dt class="fs-22 text-primary">Inclusive Employment Opportunities</dt>
+  <dd class="fs-18">
+Sargasso Reclamation creates decent jobs across the entire recycling value chain—from collectors and sorters to machine operators and admin teams. 
+Many of our employees come from under-resourced communities, where we provide them with not just jobs, but also skills development and career growth.
+</dd>
+ 
+  <dt class="fs-22 text-primary">Training and Capacity Building</dt>
+  <dd class="fs-18"> 
+We offer regular training to our staff and community partners on safety, waste handling, 
+and environmental sustainability. This equips them with skills that extend far beyond the workplace
+</dd>
+ <dt class="fs-22 text-primary"> Partnerships with Local Collectors</dt>
+  <dd class="fs-18">We work directly with informal waste pickers, small cooperatives,
+ and youth groups. Through fair pricing, technical support, and long-term engagement, we help turn plastic waste into a source of livelihood and dignity.
+</dd>
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto image-box">
+        <img src="{% static 'assets/img/market2.jpg' %}" alt="Inclusive Employment Opportunities" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
+</dl>
+<h3 class="fs-36 fw-bolder text-center mt-4"><span><i class="fa fa-landmark text-primary"></i></span> Economic Transformation</h3>
+<dl class="dl-horizontal">
+  <div class="mb-2">
+  <dt class="fs-22 text-primary">Job Creation</dt>
+  <dd class="fs-18">Our operations directly and indirectly generate employment for
+ individuals across collection, logistics, processing, and product development. This strengthens household incomes and contributes to local economic resilience.
+
+</dd>
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto image-box">
+        <img src="{% static 'assets/img/beads-display.jpg' %}" alt="Inclusive Employment Opportunities" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+  <dt class="fs-22 text-primary">Trade and Export Potential</dt>
+  <dd class="fs-18 mb-4">High-quality recycled plastics from Sargasso Reclamation are marketable 
+both locally and internationally, helping generate foreign exchange and promoting sustainable trade practices.
+</dd>
+
+</div>
+
+ 
+
+</section>
+    
+
+
+
+<!-- End Contact Section -->
+
+  
+
+
+ {% endblock %}

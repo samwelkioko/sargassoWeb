@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
+{% endblock %}
+{% block content %}
+   <style>
+     .about-section {
+    background-image: url("{% static 'assets/img/carousel-2.jpg' %}");
+    background-size: cover; /* Or 'contain' based on your visual goal */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: bottom center;
+    width: 100%;
+    min-height: 375px;
+    margin-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: 1; /* Ensure it sits above the background image */
+  }
+  .text-section {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 100px;
+  }
+    .image-box {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 350px;
+      margin-bottom: 20px;
+    }
+
+</style>
+  <!-- Start content -->
+   <section class="section about-section" >
+        <div class="bg-overlay"></div>
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-4">
+                        <h3 class="text-section"> <span class="fw-bolder">Who are We</span></h3>
+                      
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- End Video -->
+    <!-- Start about Us -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <h3 class="mb-0 text-capitalize">Our<span class="fw-bold"> Story</span></h3>
+                        <div class="main-title-border bg-primary  mx-auto"></div>
+                        <p class="text-secondary mx-auto mt-2">Sargasso Reclamation hails from Malindi in Kenya, a 1400 year old city from the Swahili-Zanzibari culture. Today Malindi is a coastal Tourism destination of 200,000 people and the region of Malindi and our neighbouring towns have a role to play in the fight against ocean waste. Malindi has the size and industrial capacity to boast a recycling sector, and our region has a growing plastic footprint of its own, the estuary of a large river that flows from densely populated inland regions, and a natural coral reef ecosystem in the shallow seas off our coast. Our trade winds also mean that on some local beaches
+                             large amounts of plastic wash ashore from the Indian ocean garbage patch, with packaging from Malaysia, Mozambique or Dubai.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 pt-4 vertical-content">
+               
+                <div class="col-lg-6">
+                    <div class="mt-3">
+                        <div>
+                            <h2 class="features-heading ">Our Mission and Vision.</h2>
+                            <div class="main-title-border bg-primary "></div>
+                        </div>
+                        <div class="features position-relative">
+                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
+                                <i class="mdi mdi-check"></i>
+                            </div>
+                            <div class="ms-5">
+                                <h3 class="fs-18 fw-bold">Our Mission</h3>
+                                <p class="pt-2 text-secondary">To create a healthy, price competitive recycling sector in East Africa, using international innovations to boost sales prices for recycled plastics in the market. To then leverage this position to strengthen the sectors stability by sharing our windfall across stakeholders, fostering firm financial foundations, lifestyle stability at pride
+                                     of work across the value chain, thereby insuring that ecological regeneration is not reliant on global commodity price</p>
+                            </div>
+                        </div>
+
+                        <div class="features position-relative">
+                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
+                                <i class="mdi mdi-check"></i>
+                            </div>
+                            <div class="ms-5">
+                                <h3 class="fs-18 fw-bold">Our Vision</h3>
+                                <p class="pt-2 text-secondary">A key weakness of the fast-growing recycling sector in Africa is low margins mean bad deals for investors and workers that stifle development for an ecologically foundational sector that has benefits across the biosphere. By leverage ocean plastic markets and in time other sources of added value, 
+                                    we are creating a healthier recycling sector for Africa that can fully leverage market mechanisms to solve the crisis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                <div class="col-lg-6">
+                    <div class="mt-3">
+                        <div>
+                            <h2 class="features-heading">Our Product Impact.</h2>
+                            <div class="main-title-border bg-primary "></div>
+                        </div>
+                        <div class="features position-relative">
+                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
+                                <i class="mdi mdi-check"></i>
+                            </div>
+                            <div class="ms-5">
+                                <h3 class="fs-18 fw-bold">Environmental Conservation</h3>
+                                <p class="fs-15 pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
+                            </div>
+                        </div>
+
+                        <div class="features position-relative">
+                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
+                                <i class="mdi mdi-check"></i>
+                            </div>
+                            <div class="ms-5">
+                                <h3 class="fs-18 fw-bold">Planing & Strategy</h3>
+                                <p class="pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
+                            </div>
+                        </div>
+
+                        <div class="features position-relative">
+                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
+                                <i class="mdi mdi-check"></i>
+                            </div>
+                            <div class="ms-5">
+                                <h3 class="fs-18 fw-bold">Economic and social transformation</h3>
+                                <p class="pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            
+        </div>
+    </section>
+    <!-- End about us -->
+<!-- Start Team -->
+    <section class="section" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <h3 class="mb-0 text-capitalize">Meet Our <span class="fw-bold">Team</span></h3>
+                        <div class="main-title-border bg-primary  mx-auto"></div>
+                        <p class="text-secondary sec_subtitle mx-auto mt-2">Our dedicated team at Sargasso  brings a wealth of experience and passion to every initiative.
+                             Together, we work tirelessly to drive positive change and empower communities, making a real difference in the lives we touch.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 pt-4">
+                  {% for employee in employee %}
+                <div class="col-lg-3">
+                    <div class="team_box rounded text-center mt-3 p-4">
+                        <img src=" {{ employee.img.url }}" alt="" class="img img-testimonial mx-auto d-block ">
+                        <div class="mt-3">
+                            <h5 class="mb-0 fw-bold fs-18">{{ employee.name}}</h5>
+                            <p class="text-secondary team_work fs-14">{{ employee.position}}</p>
+                            <a class="btn btn-sm btn-outline-primary  d-inline-flex text-primary rounded-pill bg-primary bg-opacity-10" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">Follow Me</a>
+                            <div class="collapse" id="collapseExample2">
+                                <div class="mt-3">
+                                    <ul class="list-inline team_social mt-2 mb-0 text-center">
+                                        <li class="list-inline-item"><a class="text-dark d-inline-block rounded-pill text-center border  border-secondary border-opacity-25" href="{{ employee.facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a class="text-dark d-inline-block rounded-pill text-center border border-secondary border-opacity-25" href="{{ employee.twitter}}"><i class="fa fa-google"></i></a></li>
+                                        <li class="list-inline-item"><a class="text-dark d-inline-block rounded-pill text-center border  border-secondary border-opacity-25" href="{{ employee.linkedin}}"><i class="fa fa-twitter"></i></a></li>
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor %}
+                
+            </div>
+        </div>
+    </section>
+    <!-- End Team -->
+<!-- ======= Contact Section ======= -->
+
+        <div class="container-fluid " data-aos="fade-up">
+  
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <h3 class="mb-0 text-capitalize">Our <span class="fw-bold">Location</span></h3>
+                        <div class="main-title-border bg-primary  mx-auto"></div>
+                        
+                    </div>
+                </div>
+            </div>
+  
+          <div class="row">
+       
+            <div class="col-lg-12">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.8573816255885!2d40.12316428350802!3d-3.2428620645231834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18158520b0331d3f%3A0xc03dd31190df23b1!2sSargasso%20Reclamation%20Head%20Office!5e0!3m2!1sen!2ske!4v1747900667002!5m2!1sen!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+<!-- End Contact Section -->
+
+    <!-- Start Footer -->
+
+
+ {% endblock %}
