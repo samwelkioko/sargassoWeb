@@ -21,11 +21,14 @@ def custom_404(request, exception):
 
 def homepage(request):
     testimonial = Testimonial.objects.all()
-    return render(request, 'index.html', {'testimonial': testimonial})
+    partner = Partner.objects.all()
+    profile = Profile.objects.all()
+    return render(request, 'index.html', {'testimonial': testimonial,'partner': partner, 'profile': profile})
 
 def about(request):
     employee = Employee.objects.all()
-    return render(request, 'about.html', {'employee': employee})
+    profile = Profile.objects.all()
+    return render(request, 'about.html', {'employee': employee, 'profile': profile})
 
 def offer(request):
     return render(request, 'offer.html')

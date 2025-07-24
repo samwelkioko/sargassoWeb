@@ -4,6 +4,13 @@
 Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
 {% endblock %}
 {% block content %}
+<style>
+  .modal-content {
+    background-color: #000;
+    color: #fff;
+  }
+</style>
+
     <!--Start Home-->
     <section class="home-b-img d-flex align-items-center min-vh-100" id="home">
         <div class="bg-overlay">
@@ -59,14 +66,14 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
 
     <!-- Start impact -->
     <section class="section" id="features">
+         {% for profile in profile %}
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center">
                         <h3 class="mb-0 text-capitalize">About <span class="fw-bold">Us</span></h3>
-                        <div class="main-title-border bg-primary  mx-auto"></div>
-                        <p class="text-secondary mx-auto mt-2">With backgrounds in environmental NGOs and the Kenya business community, our team came together with the idea of creating the ocean plastic products we now supply. We quickly discovered the plastics we needed were not widely available and pivoted to collecting and supplying the raw material for the sector. This background feeds our passion for startups and innovative products, and informs a passion for pushing the 
-                            bounds of the ocean plastic sector and bringing our product to the end user in new and innovative ways</p>
+                        <div class="main-title-border bg-warning  mx-auto"></div>
+                        <p class="text-secondary mx-auto mt-2">{{ profile.history}}</p>
                     </div>
                 </div>
             </div>
@@ -77,79 +84,37 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    
                     <div class="mt-3">
                         <div>
-                            <h2 class="features-heading">Our Mission and Vision.</h2>
-                            <div class="main-title-border bg-primary "></div>
+                            <h2 class="features-heading mx-4">Mission & Vision.</h2>
+                            <div class="main-title-border bg-warning"></div>
                         </div>
                         <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
+                            <div class="features-icon float-start fs-10 position-absolute rounded-pill text-primary bg-dark bg-opacity-10 ">
                                 <i class="mdi mdi-check"></i>
                             </div>
                             <div class="ms-5">
                                 <h3 class="fs-18 fw-bold">Our Mission</h3>
-                                <p class="pt-2 text-secondary">To create a healthy, price competitive recycling sector in East Africa, using international innovations to boost sales prices for recycled plastics in the market. To then leverage this position to strengthen the sectors stability by sharing our windfall across stakeholders, fostering firm financial foundations, lifestyle stability at pride
-                                     of work across the value chain, thereby insuring that ecological regeneration is not reliant on global commodity price</p>
+                                <p class="pt-2 text-secondary">{{ profile.mission}}</p>
                             </div>
                         </div>
 
                         <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
+                            <div class="features-icon float-start fs-10 position-absolute rounded-pill text-primary bg-dark bg-opacity-10 ">
                                 <i class="mdi mdi-check"></i>
                             </div>
                             <div class="ms-5">
                                 <h3 class="fs-18 fw-bold">Our Vision</h3>
-                                <p class="pt-2 text-secondary">A key weakness of the fast-growing recycling sector in Africa is low margins mean bad deals for investors and workers that stifle development for an ecologically foundational sector that has benefits across the biosphere. By leverage ocean plastic markets and in time other sources of added value, 
-                                    we are creating a healthier recycling sector for Africa that can fully leverage market mechanisms to solve the crisis.</p>
+                                <p class="pt-2 text-secondary">{{ profile.vision}}.</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+                     {% endfor %}
+            
             </div>
-            <div class="row mt-4 pt-4 vertical-content">
-                <div class="col-lg-6">
-                    <div class="mt-3">
-                        <div>
-                            <h2 class="features-heading">Our Product Impact.</h2>
-                            <div class="main-title-border bg-primary "></div>
-                        </div>
-                        <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
-                                <i class="mdi mdi-check"></i>
-                            </div>
-                            <div class="ms-5">
-                                <h3 class="fs-18 fw-bold">Environmental Conservation</h3>
-                                <p class="fs-15 pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
-                            </div>
-                        </div>
-
-                        <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
-                                <i class="mdi mdi-check"></i>
-                            </div>
-                            <div class="ms-5">
-                                <h3 class="fs-18 fw-bold">Planing & Strategy</h3>
-                                <p class="pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
-                            </div>
-                        </div>
-
-                        <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
-                                <i class="mdi mdi-check"></i>
-                            </div>
-                            <div class="ms-5">
-                                <h3 class="fs-18 fw-bold">Economic and social transformation</h3>
-                                <p class="pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="mt-3">
-                        <img src="{% static 'assets/img/loading.webp' %}" class="img-fluid mx-auto d-block" alt="" title="Features">
-                    </div>
-                </div>
-            </div>
+         
             
         </div>
     </section>
@@ -162,42 +127,19 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
         <div class="container position-relative">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="text-center">
-                        <h3 class="mb-0 text-capitalize text-white">Watch Our <span class="fw-bold">Video</span></h3>
-                        <div class="main-title-border bg-primary  mx-auto"></div>
+                    <div class="text-center position-relative">
+                        
                         <p class=" h4 fs-36 fw-bolder text-white  sec_subtitle mx-auto mt-2">Are you Ready? Join Us in Our Recycling Efforts</p>
+                        
+                              <!-- Video Trigger Button -->
+    <button type="button" class="btn btn-outline-success text-white btn-lg rounded-pill shadow mt-4" data-bs-toggle="modal" data-bs-target="#videoModal">
+      <i class="bi bi-play-circle me-2"></i> Watch Video
+    </button>
+    
                     </div>
                 </div>
             </div>
-            <div class="row mt-2 pt-2">
-                <div class="col-lg-12">
-                    <div class="mx-auto">
-                        <div class="video-btn-white text-center">
-                            <a href="#video-play" class="play-btn-white video_play mx-auto">
-                                    <button id=" video-play" type="button" class=" btn btn-outline bg-transparent border-0 m-0 p-0 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <i class="fa fa-play text-center text-white"></i>
-                                </button>
-                            </a>
-                        </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                <div class="modal-content bg-transparent border-0">
-                                    <div class="modal-body p-0 w-auto h-auto overflow-hidden d-inline-flex justify-content-center">
-                                        <div>
-                                            <div class="modal-header border-0">
-                                                <button type="button" class="bg-transparent text-white border-0 ms-auto p-0 me-4 pe-5" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close text-white fs-5"></i></button>
-                                            </div>
-                                            <iframe width="900" height="450" src="https://www.youtube.com/embed/DgbXNbW46LY?si=St-6NTZ0ZdSOnfNQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
         </div>
     </section>
     <!-- End Video -->
@@ -206,19 +148,19 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
 
     <!-- Start How It Work -->
     <section class="section">
-        <div class="container">
+        <div class="container-fluid p-4 m-4">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="text-center">
+                    <div class=" text-center">
                         <h3 class="mb-0 text-capitalize">How It <span class="fw-bold">Work?</span></h3>
-                        <div class="main-title-border bg-primary mx-auto"></div>
-                        <p class="text-secondary mx-auto mt-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <div class="main-title-border bg-warning mx-auto"></div>
+                        <p class="text-secondary text-justify mx-auto ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                     </div>
                 </div>
             </div>
             <div class="row mt-4 pt-4">
                 <div class="col-lg-4 position-relative">
-                    <div class="text-center mt-3 p-3">
+                    <div class="text-center mt-3 ">
                         <div class="work_number fs-80 position-absolute start-0 end-0">1.</div>
                         <div class="z-index position-relative">
                             <div class="fs-1">
@@ -226,7 +168,7 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
                             </div>
                             <div class="work_content mt-4">
                                 <h5 class="fw-bold">Sourcing</h5>
-                                <p class="mt-3 text-secondary mb-0">Malindi, Kenya is near a coastal garbage gyration that is one of the largest off the African coast. It has a long-standing infrastructure as a fishing port. This makes it the perfect location for collecting marine refuse that can be recycled. In 2020, we identified the opportunity of collecting for fishermen, and as the economy rebounds expanding to sourcing plastic caught every day in their fishing nets off Malindi.
+                                <p class="text-secondary text-justify mx-auto">Malindi, Kenya is near a coastal garbage gyration that is one of the largest off the African coast. It has a long-standing infrastructure as a fishing port. This makes it the perfect location for collecting marine refuse that can be recycled. In 2020, we identified the opportunity of collecting for fishermen, and as the economy rebounds expanding to sourcing plastic caught every day in their fishing nets off Malindi.
                                      We purchase today from out of work fisherman, which both keeps plastic out of the ocean, and helps to grow the local economt</p>
                             </div>
                         </div>
@@ -241,7 +183,7 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
                             </div>
                             <div class="work_content mt-4">
                                 <h5 class="fw-bold">Production</h5>
-                                <p class="mt-3 text-secondary mb-0">Sargasso produces reclaimed ocean plastic flakes by washing, shredding and bailing the bottles we purchase from local fishermen. In 2020, we identified the opportunity of collecting for fishermen, and as the economy rebounds expanding to sourcing plastic caught every day in their fishing nets off Malindi.
+                                <p class="text-secondary text-justify mx-auto">Sargasso produces reclaimed ocean plastic flakes by washing, shredding and bailing the bottles we purchase from local fishermen. In 2020, we identified the opportunity of collecting for fishermen, and as the economy rebounds expanding to sourcing plastic caught every day in their fishing nets off Malindi.
                                      We purchase today from out of work fisherman, which both keeps plastic out of the ocean, and helps to grow the local economy.</p>
                             </div>
                         </div>
@@ -268,50 +210,44 @@ Please reach out if you are looking for a cost effective partner in either regen
     <!-- End How It Work -->
 
     <!-- Start Video -->
-    <section class="section bg-video ">
+  <section class="bg-donate py-5 text-center position-relative">
         <div class="bg-overlay"></div>
-        <div class="container position-relative">
+  <div class="container position-relative">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="text-center">
-                        <h3 class="mb-0 text-capitalize text-white">More about <span class="fw-bold">Us</span></h3>
-                        <div class="main-title-border bg-primary  mx-auto"></div>
-                        <p class="text-secondary sec_subtitle mx-auto mt-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <div class="text-center position-relative">
+                        
+                        <p class=" h4 fs-36 fw-bolder text-white  sec_subtitle mx-auto mt-4 pt-4">Join The Movement Against Plastic pollution</p>
+                        
+                              <!-- Video Trigger Button -->
+    <a href= "#" class="btn btn-outline-success text-white btn-lg rounded-pill shadow mt-4">
+      <strong>Get Involved <span><i class="fa fa-heart text-danger"></i></span></strong>
+    </a>
+    
                     </div>
                 </div>
             </div>
-            <div class="row mt-0 pt-0">
-                <div class="col-lg-12">
-                    <div class="mx-auto">
-                        <div class="video-btn-white text-center">
-                            <a href="#video-play" class="play-btn-white video_play mx-auto">
-                                    <button id=" video-play" type="button" class="bg-transparent border-0 m-0 p-0 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <i class="pe-7s-play  text-center text-white"></i>
-                                </button>
-                                <span>Watch Video</span>
-                            </a>
-                        </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                <div class="modal-content bg-transparent border-0">
-                                    <div class="modal-body p-0 w-auto h-auto overflow-hidden d-inline-flex justify-content-center">
-                                        <div>
-                                            <div class="modal-header border-0">
-                                                <button type="button" class="bg-transparent text-white border-0 ms-auto p-0 me-4 pe-5" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close text-white fs-5"></i></button>
-                                            </div>
-                                            <iframe src="https://player.vimeo.com/video/99025203?h=0788a7a47b&title=0&byline=0&portrait=0&badge=0" width="990" height="460" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
         </div>
-    </section>
+  <!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow-lg rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="videoModalLabel">Our Story</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0 bg-black">
+        <div class="ratio ratio-16x9 rounded-bottom-4 overflow-hidden">
+          <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+</section>
+
     <!-- End Video -->
 
     <!-- Start Client -->
@@ -321,23 +257,23 @@ Please reach out if you are looking for a cost effective partner in either regen
                 <div class="col-lg-12">
                     <div class="text-center">
                         <h3 class="mb-0 text-capitalize">testimonials</h3>
-                        <div class="main-title-border bg-primary  mx-auto"></div>
-                        <p class="text-secondary sec_subtitle mx-auto mt-2">Hear from our clients and stories of Impact and Transformation</p>
+                        <div class="main-title-border bg-warning  mx-auto"></div>
+                        <p class="text-secondary sec_subtitle mx-auto mt-2 fs-32 text">Hear from our clients and stories of Impact and Transformation</p>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4 pt-4">
+            <div class="row m-2 p-2">
                  {% for testimonial in testimonial %}
                 <div class="col-lg-4">
                     <div class="testi_boxes bg-white p-4 mt-3 rounded">
                         <div class="testi_icon text-primary">
                           
-                            <i class="fa fa-quote-left  fs-64 d-inline-block bg-primary bg-opacity-10" aria-hidden="true"></i>
+                            <i class="fa fa-quote-left  fs-32 d-inline-block bg-white bg-opacity-10" aria-hidden="true"></i>
                         </div>
-                        <div class="mt-4">
+                        <div class="m-0">
                             <p class="client_review text-secondary mb-0 fst-italic">{{ testimonial.testimony}}</p>
-                            <h5 class="fs-17 mb-0 mt-4 fw-bold">- {{ testimonial.name}}</h5>
-                            <p class="text-primary ms-2 ps-1 mb-0">{{ testimonial.title}}</p>
+                            <h5 class="text-dark fs-16 fw-bolder mt-4 text-capitalize"> {{ testimonial.name}}</h5>
+                            <p class="text-info ms-2 ps-1 mb-0 fst-italic">{{ testimonial.title}}</p>
                         </div>
                     </div>
                 </div>
@@ -356,27 +292,20 @@ Please reach out if you are looking for a cost effective partner in either regen
                 <div class="col-lg-12">
                     <div class="text-center">
                         <h3 class="mb-0 text-capitalize">Our <span class="fw-bold">Partners</span></h3>
-                        <div class="main-title-border bg-primary  mx-auto"></div>
+                        <div class="main-title-border bg-warning  mx-auto"></div>
                         
                     </div>
                 </div>
             </div>
             <div class="row text-center">
+                 {% for partner in partner %}
                 <div class="col-lg-2">
-                    <div class="logo_img">
-                        <img src="{% static 'assets/img/mrgreen.jpg' %}" alt="logo-img" class="mx-auto img-fluid d-block">
+                    <div class="logo_img mt-4">
+                        <img src="{{ partner.img.url }}" alt="{{ partner.name }}" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div class="logo_img">
-                        <img src="{% static 'assets/img/pixel.jpg' %}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="logo_img">
-                        <img src="{% static 'assets/img/allamu.jpg' %}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                </div>
+                 {%endfor %}
+              
           
             </div>
         </div>

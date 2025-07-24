@@ -62,20 +62,20 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
     <!-- End Video -->
     <!-- Start about Us -->
     <section class="section" id="features">
+        {% for profile in profile %}
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center">
-                        <h3 class="mb-0 text-capitalize">Our<span class="fw-bold"> Story</span></h3>
+                        <h3 class="mb-0 text-capitalize ">Our<span class="fw-bold"> Story</span></h3>
                         <div class="main-title-border bg-primary  mx-auto"></div>
-                        <p class="text-secondary mx-auto mt-2">Sargasso Reclamation hails from Malindi in Kenya, a 1400 year old city from the Swahili-Zanzibari culture. Today Malindi is a coastal Tourism destination of 200,000 people and the region of Malindi and our neighbouring towns have a role to play in the fight against ocean waste. Malindi has the size and industrial capacity to boast a recycling sector, and our region has a growing plastic footprint of its own, the estuary of a large river that flows from densely populated inland regions, and a natural coral reef ecosystem in the shallow seas off our coast. Our trade winds also mean that on some local beaches
-                             large amounts of plastic wash ashore from the Indian ocean garbage patch, with packaging from Malaysia, Mozambique or Dubai.</p>
+                        <p class="text-secondary mx-auto mt-2">{{ profile.history }}</p>
                     </div>
                 </div>
             </div>
             <div class="row mt-4 pt-4 vertical-content">
                
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="mt-3">
                         <div>
                             <h2 class="features-heading ">Our Mission and Vision.</h2>
@@ -87,8 +87,7 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
                             </div>
                             <div class="ms-5">
                                 <h3 class="fs-18 fw-bold">Our Mission</h3>
-                                <p class="pt-2 text-secondary">To create a healthy, price competitive recycling sector in East Africa, using international innovations to boost sales prices for recycled plastics in the market. To then leverage this position to strengthen the sectors stability by sharing our windfall across stakeholders, fostering firm financial foundations, lifestyle stability at pride
-                                     of work across the value chain, thereby insuring that ecological regeneration is not reliant on global commodity price</p>
+                                <p class="pt-2 text-secondary">{{ profile.mission }}</p>
                             </div>
                         </div>
 
@@ -98,50 +97,13 @@ Sargasso Reclamation - TURNING THE SCARS OF TODAY INTO PRODUCTS OF TOMORROW
                             </div>
                             <div class="ms-5">
                                 <h3 class="fs-18 fw-bold">Our Vision</h3>
-                                <p class="pt-2 text-secondary">A key weakness of the fast-growing recycling sector in Africa is low margins mean bad deals for investors and workers that stifle development for an ecologically foundational sector that has benefits across the biosphere. By leverage ocean plastic markets and in time other sources of added value, 
-                                    we are creating a healthier recycling sector for Africa that can fully leverage market mechanisms to solve the crisis.</p>
+                                <p class="pt-2 text-secondary">{{ profile.vision }}.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-          
-                <div class="col-lg-6">
-                    <div class="mt-3">
-                        <div>
-                            <h2 class="features-heading">Our Product Impact.</h2>
-                            <div class="main-title-border bg-primary "></div>
-                        </div>
-                        <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
-                                <i class="mdi mdi-check"></i>
-                            </div>
-                            <div class="ms-5">
-                                <h3 class="fs-18 fw-bold">Environmental Conservation</h3>
-                                <p class="fs-15 pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
-                            </div>
-                        </div>
-
-                        <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
-                                <i class="mdi mdi-check"></i>
-                            </div>
-                            <div class="ms-5">
-                                <h3 class="fs-18 fw-bold">Planing & Strategy</h3>
-                                <p class="pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
-                            </div>
-                        </div>
-
-                        <div class="features position-relative">
-                            <div class="features-icon float-start fs-18 position-absolute rounded-pill text-primary bg-primary bg-opacity-25 text-center">
-                                <i class="mdi mdi-check"></i>
-                            </div>
-                            <div class="ms-5">
-                                <h3 class="fs-18 fw-bold">Economic and social transformation</h3>
-                                <p class="pt-2 text-secondary">You want customer to your store. Easily publish your coupans and when a user has manage to catch one of your coupens.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                
                
             </div>
             

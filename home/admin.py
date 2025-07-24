@@ -1,5 +1,5 @@
 
-from .models import PlasticCollection,Product, Employee, Profile, Testimonial, Project, Contact, Job
+from .models import *
 
 from django.contrib import admin
 
@@ -17,7 +17,7 @@ class Product_de(admin.ModelAdmin):
     list_display = ('title', 'category')  # Column headers in admin list view
 
 admin.site.register(Employee)
-
+admin.site.register(Partner)
 admin.site.register(Product, Product_de)  # Register the model with the custom admin class
 admin.site.register(Profile) 
 admin.site.register(Testimonial) 

@@ -162,24 +162,44 @@
     }
      
 .bg-overlay-gradient {
-  background: #90e0ef;
-  background: -webkit-linear-gradient(to right, #202020, #060707);
-  background: linear-gradient(to right, #202020, #060707);
-  opacity: 0.5;
   position: absolute;
   top: 0;
-  right: 0;
   left: 0;
-  bottom: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(to right, rgba(32, 32, 32, 0.5), rgba(6, 7, 7, 0.5));
+  z-index: 1;
 }
+
+/* Solid Black Transparent Overlay */
 .bg-overlay {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+/* Gradient Overlay with #42a5f5 and transparency */
+.bg-overlay1-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(2, 166, 118, 0.6), rgba(0, 90, 91, 0.6));
+  z-index: 1;
+}
+
+/* Solid Black Transparent Overlay */
+.bg-overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 90, 91, 0.5);
   z-index: 1;
 }
 
@@ -995,8 +1015,17 @@ textarea.form-control {
 }
 .bg-video {
   background-image: url(../img/bg.jpg);
-  background-size: cover;
-  background-position: center center;
+  background-size: cover;       /* Ensures it covers the section */
+  background-position: center;  /* Keeps it centered */
+  background-repeat: no-repeat;
+}
+.bg-donate {
+  background-image: url(../img/market2.jpg);
+  min-height: 40vh;
+  padding: 4rem 0;
+  background-size: cover;       /* Ensures it covers the section */
+  background-position: center;  /* Keeps it centered */
+  background-repeat: no-repeat;
 }
 
 .video-subtitle {

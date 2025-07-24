@@ -9,17 +9,10 @@ class PlasticCollection(models.Model):
         ('Other', 'Other'),
     ]
 
-    REGION_CHOICES = [
-        ('Nairobi', 'Nairobi'),
-        ('Mombasa', 'Mombasa'),
-        ('Kisumu', 'Kisumu'),
-        ('Other', 'Other'),
-    ]
-
     date = models.DateField()
     amount_kg = models.FloatField()
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-    region = models.CharField(max_length=50, choices=REGION_CHOICES)
+    region = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return f"{self.date} - {self.amount_kg} kg - {self.category} - {self.region}"
@@ -69,7 +62,13 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Partner(models.Model):
+    name = models.CharField(max_length=100)
+    img = models.ImageField(blank=True)
 
+    def __str__(self):
+        return self.name
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
