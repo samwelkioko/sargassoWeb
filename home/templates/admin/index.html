@@ -1,0 +1,90 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+
+<!-- Filters -->
+<form method="get" style="margin-bottom: 20px; display:flex; gap:15px;">
+    <select name="region" onchange="this.form.submit()">
+        <option value="">All Regions</option>
+        {% for r in regions %}
+            <option value="{{ r }}" {% if selected_region == r %}selected{% endif %}>{{ r }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="month" onchange="this.form.submit()">
+        <option value="">All Months</option>
+        {% for m in months %}
+            <option value="{{ m }}" {% if selected_month == m %}selected{% endif %}>
+                {{ m|date:"F" }}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+
+<!-- KPI Cards -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+    <div style="flex: 1; padding: 20px; background: #f0f8ff; border-radius: 10px;">
+        <h3>Total Plastic Collected</h3>
+        <p style="font-size: 24px; font-weight: bold;">{{ total_collected }} kg</p>
+    </div>
+
+    <div style="flex: 1; padding: 20px; background: #e6ffe6; border-radius: 10px;">
+        <h3>Plastic by Category</h3>
+        <ul>
+            {% for cat, amount in plastic_by_category.items %}
+                <li><b>{{ cat }}:</b> {{ amount }} kg</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div style="flex: 1; padding: 20px; background: #fff0f5; border-radius: 10px;">
+        <h3>Total Products</h3>
+        <p style="font-size: 24px; font-weight: bold;">{{ total_products }}</p>
+    </div>
+
+    <div style="flex: 1; padding: 20px; background: #ffffe0; border-radius: 10px;">
+        <h3>Average Product Price</h3>
+        <p style="font-size: 24px; font-weight: bold;">KSh {{ avg_price }}</p>
+    </div>
+</div>
+
+<!-- Charts -->
+<h2>Trends & Insights</h2>
+<canvas id="monthlyTrend" height="120"></canvas>
+<canvas id="regionalBreakdown" height="120" style="margin-top:40px;"></canvas>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const monthlyCtx = document.getElementById("monthlyTrend").getContext("2d");
+    new Chart(monthlyCtx, {
+        type: "line",
+        data: {
+            labels: {{ monthly_labels|safe }},
+            datasets: [{
+                label: "Monthly Plastic Collected (kg)",
+                data: {{ monthly_values|safe }},
+                borderColor: "blue",
+                backgroundColor: "rgba(0,0,255,0.2)",
+                fill: true,
+                tension: 0.3
+            }]
+        }
+    });
+
+    const regionalCtx = document.getElementById("regionalBreakdown").getContext("2d");
+    new Chart(regionalCtx, {
+        type: "bar",
+        data: {
+            labels: {{ regional_labels|safe }},
+            datasets: [{
+                label: "Plastic Collected by Region (kg)",
+                data: {{ regional_values|safe }},
+                backgroundColor: "rgba(0,200,0,0.6)"
+            }]
+        }
+    });
+</script>
+
+{{ block.super }}
+{% endblock %}
